@@ -93,6 +93,17 @@
         <p>
           &copy; {{ new Date().getFullYear() }} Ciclocross Chile. Todos los derechos reservados.
         </p>
+        <p class="mt-2">
+          <a
+            href="https://atom-patch-cd2.notion.site/Ciclocross-cl-270d2f8e33fe80a99c63deec90a4ce6e?pvs=74"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-secondary-300 transition-colors underline"
+          >
+            Ir a Memoria de Trabajo Final de Posgrado Desarrollo Front End para Diseñadores de
+            Shifta
+          </a>
+        </p>
       </div>
     </div>
   </footer>
