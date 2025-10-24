@@ -2,16 +2,19 @@
   <router-link
     :to="`/deportistas/${athlete.id}`"
     class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-200 group cursor-pointer"
+    :aria-label="`Ver perfil completo de ${athlete.name}, ${getCategoryLabel(athlete.category)} del club ${athlete.club}`"
   >
     <div class="p-6">
       <div class="flex items-center mb-4">
         <img
           :src="athlete.avatar"
-          :alt="athlete.name"
+          :alt="`Foto de perfil de ${athlete.name}`"
           class="w-20 h-20 rounded-full border-4 border-primary-100 mr-4"
         />
         <div>
-          <h3 class="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+          <h3
+            class="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors"
+          >
             {{ athlete.name }}
           </h3>
           <div class="flex flex-wrap gap-2 mt-2">
@@ -27,25 +30,28 @@
 
       <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200">
         <div class="text-center">
-          <div class="text-2xl font-bold text-secondary-600">
+          <div class="text-2xl font-bold text-secondary-600" aria-label="Victorias">
             {{ athlete.victories }}
           </div>
           <div class="text-xs text-gray-600">Victorias</div>
         </div>
         <div class="text-center">
-          <div class="text-2xl font-bold text-primary-600">
+          <div class="text-2xl font-bold text-primary-600" aria-label="Carreras participadas">
             {{ athlete.participations }}
           </div>
           <div class="text-xs text-gray-600">Carreras</div>
         </div>
         <div class="text-center">
-          <div class="text-2xl font-bold text-green-600">{{ getSuccessRate() }}%</div>
+          <div class="text-2xl font-bold text-green-600" aria-label="Tasa de éxito">
+            {{ getSuccessRate() }}%
+          </div>
           <div class="text-xs text-gray-600">Éxito</div>
         </div>
       </div>
 
       <div
         class="mt-4 text-center text-primary-600 font-semibold group-hover:text-primary-800 transition-colors"
+        aria-hidden="true"
       >
         Ver perfil →
       </div>

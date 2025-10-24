@@ -1,18 +1,22 @@
 <template>
   <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+    <label for="athlete-search" class="sr-only">Buscar deportistas por nombre</label>
     <div class="relative">
       <input
+        id="athlete-search"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
         type="text"
         placeholder="Buscar deportistas por nombre..."
         class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+        aria-label="Buscar deportistas por nombre"
       />
       <svg
         class="absolute left-4 top-3.5 w-6 h-6 text-gray-400"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           stroke-linecap="round"

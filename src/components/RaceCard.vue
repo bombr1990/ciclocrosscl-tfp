@@ -5,7 +5,7 @@
     <div class="relative h-48 overflow-hidden">
       <img
         :src="race.image"
-        :alt="race.name"
+        :alt="`Imagen de la carrera ${race.name} en ${race.location}`"
         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
       />
       <div
@@ -22,7 +22,13 @@
 
       <div class="space-y-2 text-gray-600 mb-4">
         <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -30,10 +36,16 @@
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
-          {{ formatDate(race.date) }}
+          <time :datetime="race.date">{{ formatDate(race.date) }}</time>
         </div>
         <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -50,7 +62,13 @@
           {{ race.location }}
         </div>
         <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -64,7 +82,8 @@
 
       <button
         @click="viewResults"
-        class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+        class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        :aria-label="`Ver resultados de la carrera ${race.name}`"
       >
         Ver resultados
       </button>
