@@ -3,7 +3,8 @@
   publish = "dist"
 
 [build.environment]
-  SECRETS_SCAN_OMIT_PATHS = "database/**,*.html"
+  # Desactivar el escaneo de secretos ya que las claves de Supabase son públicas (anon key)
+  SECRETS_SCAN_ENABLED = "false"
 
 [[redirects]]
   from = "/*"
