@@ -38,3 +38,6 @@ __screenshots__/
 # Environment variables
 .env
 .env.local
+
+# Database test files with credentials
+database/test-supabase.html
